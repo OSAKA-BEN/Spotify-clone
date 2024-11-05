@@ -23,7 +23,7 @@ export default function AccountContent() {
   const redirectToCustomerPortal = async () => {
     setLoading(true)
     try {
-      const { url, error } = await postData({ url: "/api/create-portal-link" })
+      const { url } = await postData({ url: "/api/create-portal-link" })
       window.location.href = url
     } catch (error) {
       toast.error((error as Error).message)
